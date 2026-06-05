@@ -1,6 +1,6 @@
 # portfolio-readme-writer
 
-A Claude Code skill that writes a polished, ship-ready README for a finished project. Two modes — **personal** (portfolio piece, recruiter audience) and **hackathon** (submission, judge audience).
+An agent skill that writes a polished, ship-ready README for a finished project. Two modes — **personal** (portfolio piece, recruiter audience) and **hackathon** (submission, judge audience).
 
 Different audiences, different shapes. The goal is a README that earns trust in 30 seconds.
 
@@ -23,31 +23,37 @@ If a `README.md` already exists, the skill shows a diff and asks before overwrit
 
 ## Install
 
-### Option 1 — Clone (recommended if you want to read or edit the source)
+Install with the [`skills`](https://github.com/vercel-labs/skills) CLI — the open standard for agent skills:
 
 ```bash
-git clone https://github.com/Alike001/portfolio-readme-writer.git ~/.claude/skills/portfolio-readme-writer
+npx skills add Alike001/portfolio-readme-writer
 ```
 
-### Option 2 — One-shot `.skill` file
-
-Download [portfolio-readme-writer.skill](./portfolio-readme-writer.skill) from this repo (or grab it from the [latest release](https://github.com/Alike001/portfolio-readme-writer/releases/latest)), then:
+This works across 18+ coding agents — Claude Code, Cursor, Codex, GitHub Copilot, Cline, and more. To install it for a specific agent only:
 
 ```bash
-unzip portfolio-readme-writer.skill -d ~/.claude/skills/
+npx skills add Alike001/portfolio-readme-writer -a claude-code
 ```
 
-Either way, restart Claude Code and the skill is active.
+Restart your agent and the skill is active.
 
 ### Verify install
 
-In any Claude Code session, run:
+List your installed skills:
 
-```
-/skills
+```bash
+npx skills list
 ```
 
-You should see `portfolio-readme-writer` in the list.
+You should see `portfolio-readme-writer`. In Claude Code you can also run `/skills`.
+
+### For development
+
+To read or edit the source, clone the repo:
+
+```bash
+git clone https://github.com/Alike001/portfolio-readme-writer.git
+```
 
 ## How to use
 
@@ -105,5 +111,5 @@ The `references/` files are loaded on demand, so the skill stays cheap to invoke
 
 ## Requirements
 
-- Claude Code installed ([get it here](https://claude.com/claude-code))
+- Node.js (for `npx`) and a coding agent that supports the [Agent Skills](https://github.com/vercel-labs/skills) standard — Claude Code, Cursor, Codex, GitHub Copilot, and others
 - A project that is actually finished — the skill is for documenting work, not planning it
